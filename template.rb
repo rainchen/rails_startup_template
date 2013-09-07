@@ -43,9 +43,12 @@ if use_activeadmin = yes?("Use administration framework active_admin?")
   gem 'activeadmin'
 end
 
-gem_group :development do
+gem_group :development, :test do
   # Rspec for tests (https://github.com/rspec/rspec-rails)
   gem "rspec-rails"
+end
+
+gem_group :development do
   # Guard for automatically launching your specs when files are modified. (https://github.com/guard/guard-rspec)
   gem "guard-rspec"
 
@@ -59,7 +62,6 @@ gem_group :development do
 end
 
 gem_group :test do
-  gem "rspec-rails"
   # Capybara for integration testing (https://github.com/jnicklas/capybara)
   gem "capybara"
   # FactoryGirl instead of Rails fixtures (https://github.com/thoughtbot/factory_girl)
@@ -86,7 +88,8 @@ end
 # Replace gem source
 # ==================================================
 if yes?("Use source of taobao?")
-  run 'sed -i "" -e "s/https:\/\/rubygems.org/http:\/\/ruby.taobao.org/g" Gemfile'
+  # run 'sed -i "" -e "s/https:\/\/rubygems.org/http:\/\/ruby.taobao.org/g" Gemfile'
+  add_source "http://ruby.taobao.org/"
 end
 
 # Bundle installing
