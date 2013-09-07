@@ -49,8 +49,12 @@ rails _3.2.14_ new [app_name] -m https://raw.github.com/tony612/rails_startup_te
 
 7. Optionally create a github repository.
 
-### Note
+**Note!!**
 
 There is a bug for active_admin, refer this to solve it: (http://stackoverflow.com/questions/16844411/rails-active-admin-deployment-couldnt-find-file-jquery-ui)
 
 And active_admin doesn't support rails4 for the moment.
+
+## TODO
+
+1. Add version specifiers for gems
