@@ -1,7 +1,7 @@
 # Gems
 # ==================================================
 
-is_lazy = yes?("Use lazy mode(including devise, cancan, bootstrap, font-awesome")
+is_lazy = yes?("Use lazy mode(including devise, cancan, bootstrap, font-awesome?")
 
 case ask("Which database?(1. Sqlite 2. Mysql 3. Postgres)")
 when "2"
@@ -20,7 +20,7 @@ if has_devise = is_lazy || yes?("Authentication using devise?")
   gem "devise"
 end
 
-if has_cancan = is_lazy || yes?("Authorization using cancan")
+if has_cancan = is_lazy || yes?("Authorization using cancan?")
   # For authorization (https://github.com/ryanb/cancan)
   gem "cancan"
 end
@@ -38,7 +38,7 @@ end
 # Simple form builder (https://github.com/plataformatec/simple_form)
 gem "simple_form"
 
-if has_activeadmin = yes?("Use administration framework active_admin")
+if has_activeadmin = yes?("Use administration framework active_admin?")
   # https://github.com/gregbell/active_admin
   gem 'activeadmin'
 end
@@ -66,7 +66,7 @@ gem_group :test do
   gem "factory_girl_rails"
 end
 
-if !is_lazy && yes?("Need to deploy on Heroku for rails 4")
+if !is_lazy && yes?("Need to deploy on Heroku for rails 4?")
   gem_group :production do
     # For Rails 4 deployment on Heroku
     gem "rails_12factor"
@@ -78,9 +78,15 @@ if has_bootstrap = is_lazy || yes?("Use Twitter bootstrap?")
   gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 end
 
-if has_font_awesome = is_lazy || yes?("Use font-awesome")
+if has_font_awesome = is_lazy || yes?("Use font-awesome?")
   # https://github.com/bokmann/font-awesome-rails
   gem "font-awesome-rails"
+end
+
+# Replace gem source
+# ==================================================
+if yes?("Use source of taobao?")
+  run 'sed -i "" -e "s/https:\/\/rubygems.org/http:\/\/ruby.taobao.org/g" Gemfile'
 end
 
 # Bundle installing
@@ -96,7 +102,6 @@ run "echo >> app/assets/stylesheets/application.css.scss"
 # Initialize guard
 # ==================================================
 run "bundle exec guard init rspec"
-
 
 if has_devise
 
