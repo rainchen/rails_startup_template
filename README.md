@@ -7,13 +7,13 @@ Also check out [Startup Readings](https://github.com/dennybritz/startupreadings)
 ## How to Use
 
 ```bash
-rails new [app_name] -m https://raw.github.com/tony612/rails_startup_template/master/template.rb
+rails new [app_name] -m https://raw.github.com/beansmile/rails_startup_template/master/template.rb
 ```
 
 ### Specify rails version
 
 ```bash
-rails _3.2.14_ new [app_name] -m https://raw.github.com/tony612/rails_startup_template/master/template.rb
+rails _3.2.14_ new [app_name] -m https://raw.github.com/beansmile/rails_startup_template/master/template.rb
 ```
 
 
