@@ -57,6 +57,12 @@ There is a bug for active_admin, refer this to solve it: (http://stackoverflow.c
 
 And active_admin doesn't support rails4 for the moment.
 
+## Contribute
+
+If you want use it as your own template, please fork it.
+
+Otherwise, welcome to send pull requests.
+
 ## TODO
 
 1. Add [capistrano](https://github.com/capistrano/capistrano), and the deloy script(?)
