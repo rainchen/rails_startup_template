@@ -15,12 +15,12 @@ end
 # https://github.com/macournoyer/thin
 gem "thin"
 
-if has_devise = is_lazy || yes?("Authentication using devise?")
+if use_devise = is_lazy || yes?("Authentication using devise?")
   # For authentication (https://github.com/plataformatec/devise)
   gem "devise"
 end
 
-if has_cancan = is_lazy || yes?("Authorization using cancan?")
+if use_cancan = is_lazy || yes?("Authorization using cancan?")
   # For authorization (https://github.com/ryanb/cancan)
   gem "cancan"
 end
@@ -38,7 +38,7 @@ end
 # Simple form builder (https://github.com/plataformatec/simple_form)
 gem "simple_form"
 
-if has_activeadmin = yes?("Use administration framework active_admin?")
+if use_activeadmin = yes?("Use administration framework active_admin?")
   # https://github.com/gregbell/active_admin
   gem 'activeadmin'
 end
@@ -73,12 +73,12 @@ if !is_lazy && yes?("Need to deploy on Heroku for rails 4?")
   end
 end
 
-if has_bootstrap = is_lazy || yes?("Use Twitter bootstrap?")
+if use_bootstrap = is_lazy || yes?("Use Twitter bootstrap?")
   # https://github.com/anjlab/bootstrap-rails
   gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 end
 
-if has_font_awesome = is_lazy || yes?("Use font-awesome?")
+if use_font_awesome = is_lazy || yes?("Use font-awesome?")
   # https://github.com/bokmann/font-awesome-rails
   gem "font-awesome-rails"
 end
@@ -103,7 +103,7 @@ run "echo >> app/assets/stylesheets/application.css.scss"
 # ==================================================
 run "bundle exec guard init rspec"
 
-if has_devise
+if use_devise
 
   # Initialize Devise
   # ==================================================
@@ -121,24 +121,24 @@ if has_devise
 
 end
 
-if has_cancan
+if use_cancan
   # Initialize CanCan
   # ==================================================
   run "rails g cancan:ability"
 end
 
-if has_activeadmin
+if use_activeadmin
   run "rails generate active_admin:install"
 end
 
 
-if has_bootstrap
+if use_bootstrap
   run "echo '@import \"twitter/bootstrap\";' >>  app/assets/stylesheets/application.css.scss"
   run "echo '//= require twitter/bootstrap' >>  app/assets/javascripts/application.js"
   run "rails g simple_form:install --bootstrap"
 end
 
-if has_font_awesome
+if use_font_awesome
   run "echo '@import \"font-awesome\";' >>  app/assets/stylesheets/application.css.scss"
 end
 
