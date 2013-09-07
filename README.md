@@ -39,15 +39,17 @@ rails _3.2.14_ new [app_name] -m https://raw.github.com/tony612/rails_startup_te
 
 2. Lazy mode. Set some gems which are optional originally default, including devise, cancan, bootstrap, font-awesome
 
-3. Cleans up assets by renaming `application.css` to `application.css.scss` and removing the `include_tree` directives. It's better design to import and require things manually. For example, `@import 'bootstrap';`
+3. Enable replacing gem source with [taobao](http://ruby.taobao.org/).
 
-4. bundle install
+4. Cleans up assets by renaming `application.css` to `application.css.scss` and removing the `include_tree` directives. It's better design to import and require things manually. For example, `@import 'bootstrap';`
 
-5. Initialize some gems: guard, devise, cancan, activeadmin, bootstrap, fontawesome
+5. bundle install
 
-6. Initializes a new git repository with an initial commit.
+6. Initialize some gems: guard, devise, cancan, activeadmin, bootstrap, fontawesome
 
-7. Optionally create a github repository.
+7. Initializes a new git repository with an initial commit.
+
+8. Optionally create a github repository.
 
 **Note!!**
 
