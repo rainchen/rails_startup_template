@@ -57,4 +57,5 @@ And active_admin doesn't support rails4 for the moment.
 
 ## TODO
 
-1. Add version specifiers for gems
+1. Add [capistrano](https://github.com/capistrano/capistrano), and the deloy script(?)
+2. Add version specifiers for gems
