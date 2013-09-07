@@ -149,10 +149,6 @@ run "rake db:migrate"
 # Ignore Vim/Emacs swap files, .DS_Store, and more
 # ===================================================
 run "cat << EOF >> .gitignore
-/.bundle
-/db/*.sqlite3
-/log/*.log
-/tmp
 database.yml
 *.swp
 *~
