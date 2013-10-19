@@ -2,7 +2,7 @@
 
 # Helpers
 def download(url, save_as)
-  %x{curl '#{url}' -O #{save_as} -s}
+  %x{curl '#{url}' -o #{save_as} -s}
 end
 
 # Replace gem source
