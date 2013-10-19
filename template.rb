@@ -235,6 +235,9 @@ database.yml
 EOF"
 
 
+# create database.yml.example
+run "cp config/database.yml config/database.yml.example"
+
 # Git: Initialize
 # ==================================================
 git :init
