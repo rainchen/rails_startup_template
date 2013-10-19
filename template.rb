@@ -142,12 +142,12 @@ gem_group :test do
   gem 'faker'
 end
 
-if !is_lazy && yes?("Need to deploy on Heroku for rails 4?")
-  gem_group :production do
-    # For Rails 4 deployment on Heroku
-    gem "rails_12factor"
-  end
-end
+# if !is_lazy && yes?("Need to deploy on Heroku for rails 4?")
+#   gem_group :production do
+#     # For Rails 4 deployment on Heroku
+#     gem "rails_12factor"
+#   end
+# end
 
 # Bundle installing
 run_bundle
